@@ -1,0 +1,32 @@
+:root{--tree-block-size: 580px;}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(12,0,78);
+    background: linear-gradient(117deg, rgba(12,0,78,1) 0%, rgba(82,58,153,1) 100%);
+    height: 1vh;
+}
+.__container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tree-container {
+    position: relative;
+    width: var(--tree-block-size);
+    height: var(--tree-block-size);
+}
+
+.ground-snow{
+    width: 100px;
+    height: 20px;
+    background-color: #fff;
+    margin: 0 auto;
+}

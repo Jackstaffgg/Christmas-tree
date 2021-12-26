@@ -1,0 +1,89 @@
+.tree {
+    position: relative;
+    top: 140px;
+    margin: auto;
+    max-width: fit-content;
+
+}
+.tree-star {
+    margin: 0 auto;
+    position: absolute;
+    top: 61px;
+    left: 115px;
+    width: 70px;
+    height: 70px;
+    background: #ffe380;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+    z-index: 4;
+}
+.tree-triangle1 {
+    margin: auto;
+    position: relative;
+    left: 0px;
+    top: 110px;
+    width: 200px;
+    height: 100px;
+    background: #038052;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: 3;
+}
+.tree-triangle2 {
+    margin: auto;
+    position: relative;
+    left: 0px;
+    top: 60px;
+    width: 250px;
+    height: 130px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: #046944;
+    z-index: 2;
+}
+.tree-triangle3 {
+    margin: auto;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 150px;
+    background: #034f33;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+
+.trunk {
+    margin: auto;
+    width: 40px;
+    height: 60px;
+    background: #66503e;
+    z-index: -1;
+
+}
+.__ball{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 100%;
+    z-index: 100;
+}
+.ball1{top: 360px; left: 0px; background-color: rgb(255, 0, 0);}
+.ball2{top: 270px; left: 230px; background-color: rgb(145, 255, 0);}
+.ball3{top: 195px; left: 60px; background-color: rgb(0, 255, 200);}
+.ball4{top: 250px; left: 160px; background-color: rgb(255, 0, 0);}
+.ball5{top: 330px; left: 170px; background-color: rgb(0, 17, 255);}
+.ball6{top: 300px; left: 90px; background-color: rgb(255, 0, 255);}
+.ball7{top: 150px; left: 160px; background-color: rgb(255, 153, 0);}
+.ball8{top: 360px; left: 220px; background-color: rgb(238, 255, 0);}
+.ball9{top: 230px; left: 100px; background-color: rgb(0, 60, 255);}
+.tree-ball-shine{
+    width: 20px;
+    height: 18px;
+    position: relative;
+    top: 7px;
+    left: 10px;
+    background-color: #fff;
+    border-radius: 100%;
+    opacity: .75;
+    transform: rotate(30deg);
+}

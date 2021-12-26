@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block styles %}
+    
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+{% if tree_size == "min"%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tree-size-css/min-size.css')}}">
+{% elif tree_size == "med" %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tree-size-css/med-size.css')}}">
+{% elif tree_size == "max" %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tree-size-css/max-size.css')}}">
+{% endif %}
+{% endblock %}
+
+
+{% block main%}
+<div id="snow"></div>
+<div class="__container">
+    <div class="main-container">
+        <div class="tree-container" >
+            <div class="tree" id="tree"
+                    attr_tree-size = "{{tree_size}}" 
+                    attr_balls-count= "{{balls_count}}" 
+                    attr_is-snowy = "{{is_snowy}}" 
+                    attr_is-lighting = "{{is_lighting}}"
+            >
+
+                <div class="tree-star"></div>
+                <div class="tree-triangle1"></div>
+                <div class="tree-triangle2"></div>
+                <div class="tree-triangle3"></div>
+                <div class="trunk"></div>
+                <div class="ground-snow"></div>
+                <div class="balls">
+                    <div class="ball1 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball2 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball3 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball4 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball5 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball6 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball7 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball8 __ball"> <div class="tree-ball-shine"></div> </div>
+                    <div class="ball9 __ball"> <div class="tree-ball-shine"></div> </div>
+                    {% if tree_size == "med" %}
+                        <div class="ball10 __ball"> <div class="tree-ball-shine"></div> </div>
+                        <div class="ball11 __ball"> <div class="tree-ball-shine"></div> </div>
+                    {% elif tree_size == "max" %}
+                        <div class="ball10 __ball"> <div class="tree-ball-shine"></div> </div>
+                        <div class="ball11 __ball"> <div class="tree-ball-shine"></div> </div>
+                        <div class="ball12 __ball"> <div class="tree-ball-shine"></div> </div>
+                        <div class="ball13 __ball"> <div class="tree-ball-shine"></div> </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <form action="/" method="post" class="tree-form" >
+            
+
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="module" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <!-- <script  src="{{ url_for('static', filename='js/snow.js') }}"></script> -->
+{% endblock %}
