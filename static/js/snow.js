@@ -86,7 +86,6 @@ var Snowflake = function (canvas, theme, min, max) {
     this.x = random(0, canvas.width);
     this.y = random(-20, -800);
     this.Vy = random(1, 2)
-    console.log(this.canvas)
 
     //set default
     this.color = "#FFF"

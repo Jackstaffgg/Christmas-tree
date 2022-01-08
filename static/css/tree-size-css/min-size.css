@@ -17,6 +17,16 @@
 
     z-index: 4;
 }
+
+.tree-star-socket{
+    position: relative;
+    top: 14px;
+    left: 14px;
+    width: 60%;
+    height: 60%;
+    background-color: #caa210;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
 .tree-triangle1 {
     margin: auto;
     position: relative;
@@ -59,14 +69,7 @@
     z-index: -1;
 
 }
-.__ball{
-    position: absolute;
-    width: 35px;
-    height: 35px;
-    background-color: #fff;
-    border-radius: 100%;
-    z-index: 100;
-}
+
 .ball1{top: 360px; left: 0px; background-color: rgb(255, 0, 0);}
 .ball2{top: 270px; left: 230px; background-color: rgb(145, 255, 0);}
 .ball3{top: 195px; left: 60px; background-color: rgb(0, 255, 200);}
@@ -76,6 +79,10 @@
 .ball7{top: 150px; left: 160px; background-color: rgb(255, 153, 0);}
 .ball8{top: 360px; left: 220px; background-color: rgb(238, 255, 0);}
 .ball9{top: 230px; left: 100px; background-color: rgb(0, 60, 255);}
+
+.ball11, .ball10, .ball12, .ball13{display: none;}
+
+
 .tree-ball-shine{
     width: 20px;
     height: 18px;

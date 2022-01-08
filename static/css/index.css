@@ -1,11 +1,18 @@
-:root{--tree-block-size: 580px;}
+:root{
+	--tree-block-size: 580px;
+	--active-pink-color: #f72585;
+	--pink-color: #b5179e;
+
+	--form-width: 450px;
+	--form-height: 500px;
+}
 *{
     margin: 0;
     padding: 0;
 }
 body{
     background: rgb(12,0,78);
-    background: linear-gradient(117deg, rgba(12,0,78,1) 0%, rgba(82,58,153,1) 100%);
+    background: linear-gradient(117deg, #240046 0%, #5a189a 100%);
     height: 1vh;
 }
 .__container{
@@ -19,6 +26,7 @@ body{
 }
 
 .tree-container {
+    display: block;
     position: relative;
     width: var(--tree-block-size);
     height: var(--tree-block-size);
@@ -30,3 +38,371 @@ body{
     background-color: #fff;
     margin: 0 auto;
 }
+
+.__ball{
+    display: none;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 100%;
+    z-index: 100;
+}
+
+.tree-form{
+    padding: 20px;
+    border-radius: 10%;
+    margin: 20px;
+    background-color: #3a0ca3;
+    width: var(--form-width);
+    height: var(--form-height);
+	z-index: 1000;
+}
+.tree-form-title{
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 34px;
+    color: #fff;
+}
+
+
+
+.__form-settings_title{
+	color: #fff;
+	font-size: 20px;
+}
+
+
+/*  SIZE  */
+.form-radio_size{
+    margin: 25px auto 0 auto;
+    width: fit-content;
+}
+
+
+.form-radio_size-btn{
+	margin-top: 15px;
+	display: inline-block;
+	margin-right: 20px;
+}
+.form-radio_size-btn:last-child{margin: 0;}
+.form-radio_size-btn input[type=radio] {
+	display: none;
+}
+.form-radio_size-btn label{
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 20px;
+	line-height: 34px;
+    font-size: 19px;
+	border: 2px solid #4361ee;
+	border-radius: 6px;
+	user-select: none;
+    background-color: #4cc9f0;
+    color: #000;
+    font-weight: 600;
+    transition: transform .2s linear, box-shadow .35s linear; 
+}
+
+.form-radio_size-btn input[type=radio]:checked + label {
+	box-shadow: inset 0 0 0 2em var(--active-pink-color);
+    border-color: var(--pink-color);
+}
+
+.form-radio_size-btn label:hover {
+	transform: translate(0, -0.20em);
+}
+
+
+/*  BALLS COUNT  */
+.form-balls{
+	margin: 40px auto 0 auto;
+	width: fit-content;
+	padding-bottom: 20px;
+}
+.balls-count {
+	display: inline-block;
+	position: relative;
+	width: 120px;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+.balls-count input[type="number"] {
+	display: block;
+	height: 40px;
+	line-height: 32px;
+    font-size: 18px;
+	width: 100%;
+	background-color: #4cc9f0;
+	border: 1px solid #3a0ca3;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+.balls-count input[type="number"]::-webkit-outer-spin-button,
+.balls-count input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.balls-count_minus {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	bottom: 1px;
+	width: 25px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	background-color: #7209b7;
+	color: #fff;
+	transition: all .2s linear;
+}
+.balls-count_plus {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	width: 25px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	background-color: #7209b7;
+	color: #fff;
+	transition: all .2s linear;
+}
+.balls-count_minus:hover,
+.balls-count_plus:hover{
+	
+	background-color: var(--active-pink-color);
+}
+
+
+
+
+/*  CHECKBOX  */
+.form-checkbox-block{display: flex; margin-top: 20px;}
+
+
+.form-checkbox {
+	display: inline-block;    
+	height: 28px;    
+	line-height: 28px;      
+	margin-right: 20px;       
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	user-select: none;	
+}
+.form-checkbox .form-checkbox-switch {
+	display: inline-block;	
+	width: 36px;
+	height: 14px;	
+	border-radius: 20px;
+	position: relative;
+	top: 6px;			
+	vertical-align: top;
+	background: #4895ef;
+	transition: .2s;
+}
+.form-checkbox .form-checkbox-switch:before {
+	content: '';
+	display: inline-block;	
+	width: 20px;	
+	height: 20px;
+	position: absolute;
+	top: -3px;
+	left: -1px;
+	background: #4cc9f0;
+	border-radius: 50%;
+	box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
+	transition: .15s;		
+}
+.form-checkbox input[type=checkbox] {
+	display: block;	
+	width: 0;
+	height: 0;	
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.form-checkbox input[type=checkbox]:checked + .form-checkbox-switch {
+	background: var(--pink-color);
+}
+.form-checkbox input[type=checkbox]:checked + .form-checkbox-switch:before {
+	background: var(--active-pink-color);
+	transform:translateX(18px);
+}
+ 
+/* Hover */
+.form-checkbox input[type="checkbox"]:not(:disabled) + .form-checkbox-switch {
+	cursor: pointer;
+	border-color: rgba(0, 0, 0, .3);
+}
+ 
+.form-checkbox input[type="checkbox"]:not(:disabled):active + .form-checkbox-switch:before, 
+.form-checkbox input[type="checkbox"]:not(:disabled):focus + .form-checkbox-switch:before {
+	animation: checkbox-active-on 0.5s forwards linear;
+}
+@keyframes checkbox-active-on {
+	0% {
+		box-shadow: 0 0 0 0 rgba(212,212,212, 0);
+	}
+	99% {
+		box-shadow: 0 0 0 10px rgba(212,212,212, 0.5);
+	}
+}
+ 
+.form-checkbox input[type="checkbox"]:not(:disabled):checked:active + .form-checkbox-switch:before, 
+.form-checkbox input[type="checkbox"]:not(:disabled):checked:focus + .form-checkbox-switch:before {
+	animation: checkbox-active-off 0.5s forwards linear;
+}
+@keyframes checkbox-active-off {
+	0% {
+		box-shadow: 0 0 0 0 rgba(154,190,247, 0);
+	}
+	99% {
+		box-shadow: 0 0 0 10px rgba(154,190,247, 0.5);
+	}
+}
+ 
+.form-send{
+	width: fit-content;
+	margin: 50px auto;
+}
+.from-send_btn{
+	text-align: center;
+
+	padding: 10px 15px;
+	border: none;
+	border-radius: 15px;
+	background-color: transparent;
+	border: 2px solid var(--pink-color);
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	transition: all .2s linear;
+}
+.from-send_btn:hover,
+.from-send_btn:focus{
+	transform: translateY(-0.25em);
+	box-shadow: inset 0 0 0 2em var(--active-pink-color);
+}
+
+
+
+
+svg{
+	--red: #ff2c2c;
+	--yellow: #ffeb00;
+	--green: #00ff5d;
+	--blue: #0095ff;
+	--gray: rgb(49, 49, 49);
+	--anim-speed: 2s;
+}
+.tree-triangle1-garland, 
+.tree-triangle2-garland,
+.tree-triangle3-garland{
+	width: 100%;
+	height: 100%;
+}
+
+.bulb-off{
+	fill: var(--gray);
+}
+.bulb-red{
+	fill: var(--red);
+	box-shadow:  -5px -5px 5px black;
+	animation: var(--anim-speed) alternate 0s infinite blinkRed;
+}
+  
+.bulb-yellow {
+	fill: var(--yellow);
+	animation: var(--anim-speed) alternate 0s infinite blinkYellow;
+}
+  
+.bulb-blue {
+	fill: var(--blue);
+	animation: var(--anim-speed) alternate 0s infinite blinkBlue;
+}
+
+.bulb-green{
+	fill: var(--green);
+	animation: var(--anim-speed) alternate 0s infinite blinkGreen;
+}
+
+@keyframes identifier {
+
+}
+
+
+@keyframes blinkRed {
+	0%{
+	  fill: var(--red);
+	}
+	25% {
+	  fill: var(--blue);
+	}
+	50% {
+	  fill: var(--green);
+	}
+	75% {
+	  fill: var(--yellow);
+	}
+  }
+  
+  @keyframes blinkYellow {
+	0%{
+	  fill: var(--yellow);
+	}
+	25% {
+	  fill: var(--red);
+	}
+	50% {
+	  fill: var(--blue);
+	}
+	75% {
+	  fill: var(--green);
+	}
+  }
+  
+  @keyframes blinkBlue {
+	0%{
+	  fill: var(--blue);
+	}
+	25% {
+	  fill: var(--green);
+	}
+	50% {
+	  fill: var(--yellow);
+	}
+	75% {
+	  fill: var(--red);
+	}
+  }
+  
+  @keyframes blinkGreen {
+	0%{
+	  fill: var(--green);
+	}
+	25% {
+	  fill: var(--yellow);
+	}
+	50% {
+	  fill: var(--red);
+	}
+	75% {
+	  fill: var(--blue);
+	}
+  }
